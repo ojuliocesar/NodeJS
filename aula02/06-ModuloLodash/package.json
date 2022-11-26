@@ -1,0 +1,22 @@
+{
+  "name": "06-modulolodash",
+  "version": "1.0.0",
+  "description": "Conhecendo o Lodash :D",
+  "main": "06-ModuloLodash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lodash",
+    "js",
+    "javascript",
+    "require",
+    "import"
+  ],
+  "author": "Julio",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "sweetalert2": "^11.6.14"
+  }
+}
