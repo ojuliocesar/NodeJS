@@ -1,0 +1,20 @@
+{
+  "name": "10-ExpressHTTP",
+  "version": "1.0.0",
+  "description": "Conhecendo o Express",
+  "main": "10-ExpressHTTP.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon 10-ExpressHTTP.js"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "Julio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}

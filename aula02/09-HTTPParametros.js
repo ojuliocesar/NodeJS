@@ -9,7 +9,7 @@ const servidor = http.createServer((req, res) => {
 
   let nome = parametros.query.nome;
 
-  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
   res.end(`
   

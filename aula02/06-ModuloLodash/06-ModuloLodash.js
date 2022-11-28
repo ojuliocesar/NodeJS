@@ -1,5 +1,5 @@
 // Exemplo de uso da Biblioteca Lodash
-// Inicializar o Lodash: npm init / npm i -g npm
+// Inicializar o npm: npm init / npm i -g npm
 // Instalação: npm i --save lodash
 
 const _ = require('lodash');
