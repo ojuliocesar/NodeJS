@@ -1,20 +1,18 @@
 {
-  "name": "aula03",
+  "name": "13-acessodb",
   "version": "1.0.0",
-  "description": "Conhecendo o Express",
-  "main": "10-ExpressHTTP.js",
+  "description": ":/",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon 11-ExpressParametros.js"
+    "start": "nodemon index.js"
   },
-  "keywords": [
-    "express",
-    "nodejs"
-  ],
+  "keywords": [],
   "author": "Julio",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.20"
   }
 }
