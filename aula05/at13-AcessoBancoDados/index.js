@@ -21,7 +21,7 @@ app.use(express.json());
 // Criar as rotas
 app.get('/', (req,res) => {
     res.status(200);
-    res.send('<h1>Index - Rotas</h1>');
+    res.sendFile(__dirname + '/views/login.html');
 })
 
 // Cria a rota cadastrar
@@ -73,7 +73,7 @@ app.post('/cadastrar/login', (req,res) => {
             "retorno": "erro",
             "message": "Preencha os Campos obrigatórios"
         });
-        
+
     }
 
     if(senha != confirmar){
@@ -165,6 +165,55 @@ app.delete('/deletar/login',(req,res)=>{
 
     } catch (error) {
         return res.send(`Não foi possível deletar o registro! ${error}`)        
+    }
+})
+
+app.post('/validar/login', (req, res) => {
+    let {email, senha} = req.body;
+
+    try {
+        
+        let sql = `
+        SELECT 
+            email 
+        FROM 
+            tb_login 
+        WHERE 
+            email = '${email}'
+        AND BINARY
+            password = '${senha}'
+        AND 
+            status = 1
+        `;
+
+        conn.query(sql, (error, result) => {
+            if (error) {
+                return res.json({
+                    response: false,
+                    message: `Não foi possível validar o Usuário: ${error}`
+                })
+            }
+
+            if (!result) {
+                res.json({
+                    response: false,
+                    message: "Usuários não encontrado!"
+                })
+
+                return false;
+            }
+
+            // Nesse trecho de código é iniciado a sessão do usuário
+            // Em NodeJS o mais comum é utilizar:
+            // LOCALSTORAGE, SESSIONSTORAGE ou COOKIES para armazenar dados da sessão do usuário
+            // Pesquisar sobre autentificação JWTToken
+        }) 
+
+    } catch (error) {
+        return res.json({
+            response: false,
+            message: error
+        })
     }
 })
 
