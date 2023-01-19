@@ -4,6 +4,10 @@ const express = require('express');
 // Inicializa o Express
 const app = express();
 
+const user = new require('./models/user');
+
+app.use(express.static('views/public'));
+
 const porta = 5000;
 
 app.get('/', (req, res) => {
